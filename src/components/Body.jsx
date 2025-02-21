@@ -7,6 +7,7 @@ import { swiggyApi } from '../utils/Api'
 
 export default function () {
   const [restaurantData, setRestaurantData] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -21,10 +22,25 @@ export default function () {
     <div>
       <div className='px-40'>
         <button className=' bg-black text-white px-6 py-2 hover:shadow-lg shadow-lime-700 transition-shadow duration-300 cursor-pointer rounded-b-xl '
-        onClick={()=> {const filteredList = restaurantData.filter((restaurant) => restaurant.info.avgRating > 4.5)
-          setRestaurantData(filteredList)
-        }}>
+          onClick={
+            () => {
+              const filteredList = restaurantData.filter((restaurant) => restaurant.info.avgRating > 4.5)
+              setRestaurantData(filteredList)
+            }}>
           Top Resturants
+        </button>
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className='border border-gray-400 rounded-b-xl py-2 px-2' />
+        <button className=' bg-black text-white px-6 py-2 hover:shadow-lg shadow-lime-700 transition-shadow duration-300 cursor-pointer rounded-b-xl '
+          onClick={
+            () => {
+              const searchList = restaurantData.filter((restaurant) => restaurant.info.name.includes(search))
+              setRestaurantData(searchList)
+            }}>
+          Search
         </button>
       </div>
       <div className='px-20 pt-10 justify-center flex flex-wrap gap-4 '>

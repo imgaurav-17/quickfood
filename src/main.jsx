@@ -1,12 +1,15 @@
-import { StrictMode } from 'react'
+import { StrictMode, lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import Body from './components/Body.jsx'
-import About from './components/About.jsx'
+// import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 import Resturantmenu from './components/Resturantmenu.jsx'
+
+const About = lazy(() => import('./components/About.jsx'))
+
 const approuter = createBrowserRouter([
   {
     path: '/',
@@ -18,7 +21,7 @@ const approuter = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About />,
+        element: <Suspense><About /></Suspense>,
       },
       {
         path: '/contact',
