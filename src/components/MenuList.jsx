@@ -3,7 +3,7 @@ import ItemList from "./ItemList";
 
 const MenuList = ({ data }) => {
   const [showItems, setShowItems] = useState(false);
-  
+
   const clickHandler = () => {
     setShowItems(!showItems);
   };
@@ -21,12 +21,8 @@ const MenuList = ({ data }) => {
           <span>{showItems ? "⬆️" : "⬇️"}</span>
         </div>
 
-        <div className={`transition-all ease-in-out duration-600 ${
-          showItems ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
-        }`}>
-          
-            <ItemList items={data.itemCards} />
-          
+        <div>
+        {showItems && < ItemList items={data.itemCards} />}
         </div>
       </div>
     </div>
