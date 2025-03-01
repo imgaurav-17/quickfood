@@ -48,7 +48,7 @@ export default function () {
           className=" bg-black text-white px-6 py-2 hover:shadow-lg shadow-lime-700 transition-shadow duration-300 cursor-pointer rounded-b-xl "
           onClick={() => {
             const searchList = restaurantData.filter((restaurant) =>
-              restaurant.info.name.includes(search)
+              restaurant.info.name.toLowerCase().includes(search.toLowerCase())
             );
             setRestaurantData(searchList);
           }}
