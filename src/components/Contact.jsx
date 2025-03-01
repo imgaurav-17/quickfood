@@ -1,10 +1,6 @@
-import React, { useRef, useState } from 'react';
-
-
-
+import React, { useRef, useState } from "react";
 
 function Contact() {
-
   const form = useRef();
   const [showPopup, setShowPopup] = useState(false);
 
@@ -12,8 +8,8 @@ function Contact() {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_ovxl7jc', 'template_j5mv0j2', form.current, {
-        publicKey: 'ar4gceY43gmwXP9A7',
+      .sendForm("service_ovxl7jc", "template_j5mv0j2", form.current, {
+        publicKey: "ar4gceY43gmwXP9A7",
       })
       .then(
         () => {
@@ -24,26 +20,30 @@ function Contact() {
           e.target.reset();
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          console.log("FAILED...", error.text);
         }
       );
   };
 
   return (
-    <div className='sm:px-24 px-4 pb-24' id='contact'>
-      <span className='text-center'>
-        <h1 className='text-4xl font-semibold'>Contact Me</h1>
-        <p className='text-gray-500 font-semibold'>Get in Touch</p>
+    <div className="sm:px-24 px-4 pb-24" id="contact">
+      <span className="text-center">
+        <h1 className="text-4xl font-semibold">Contact Me</h1>
+        <p className="text-gray-500 font-semibold">Get in Touch</p>
       </span>
-      <div className='flex gap-11 pt-10 flex-col md:flex-row items-center justify-center'>
-       
+      <div className="flex gap-11 pt-10 flex-col md:flex-row items-center justify-center">
         <div>
           <div className="flex items-center justify-center">
             <div className="p-8 rounded-lg shadow-md w-[20rem] sm:w-[28rem]">
-              <h2 className="text-2xl font-bold mb-6 text-center">Write me a project</h2>
+              <h2 className="text-2xl font-bold mb-6 text-center">
+                Write me a project
+              </h2>
               <form ref={form} onSubmit={sendEmail} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     Name
                   </label>
                   <input
@@ -55,7 +55,10 @@ function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     Mail
                   </label>
                   <input
@@ -67,7 +70,10 @@ function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="project" className="block text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="project"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     Project
                   </label>
                   <textarea
