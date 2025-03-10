@@ -7,7 +7,7 @@ const ItemList = ({ items }) => {
       <ul>
         {items.map((item) => (
           <div
-            className="flex justify-between items-center py-2 border-b-1 border-gray-300 gap-x-10"
+            className="flex justify-between items-center py-2 border-b-1 border-gray-500 gap-x-10"
             key={item?.card?.info?.id}
           >
             <div className="w-9/12">

@@ -10,7 +10,7 @@ const MenuList = ({ data }) => {
 
   return (
     <div>
-      <div className="p-4 border-b-2 border-gray-200">
+      <div className="p-4 border-b-2 bg-emerald-100 rounded-lg border-gray-400">
         <div
           className="flex justify-between items-center cursor-pointer pb-2"
           onClick={clickHandler}

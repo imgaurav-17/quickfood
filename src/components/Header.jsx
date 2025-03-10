@@ -19,7 +19,7 @@ export default function Header() {
                 className={
                   statusOnline
                     ? " border-2 border-green-600 rounded-lg p-2 hover:bg-green-600 hover:text-white transition duration-300 ease-in-out"
-                    : "border-2 border-red-600 rounded-lg p-2  hover:bg-red-600 hover:text-white transition duration-300 ease-in-out"
+                    : "border-2 border-red-600 rounded-lg p-2 hover:bg-red-600 hover:text-white transition duration-300 ease-in-out"
                 }
               >
                 Online

@@ -42,7 +42,7 @@ export default function () {
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="border border-gray-400 rounded-b-xl py-2 px-2"
+          className="border border-gray-400 rounded-b-xl py-2 px-2 ml-8"
         />
         <button
           className=" bg-black text-white px-6 py-2 hover:shadow-lg shadow-lime-700 transition-shadow duration-300 cursor-pointer rounded-b-xl "
