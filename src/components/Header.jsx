@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 export default function Header() {
   const statusOnline = useOnlineStatus();
+  const cartItems = useSelector((state) => state.cart.items);
   return (
     <div>
       <div className="flex justify-between items-center py-2 px-10 text-xl border-solid border-2 border-gray-200">
@@ -33,8 +35,8 @@ export default function Header() {
               <li className="hover:text-green-800 font-semibold cursor-pointer">
                 <Link to="Contact">Contact us</Link>
               </li>
-              <li className="hover:text-green-800 font-semibold cursor-pointer">
-                Cart
+              <li className="hover:text-green-800 font-semibold cursor-pointer">  
+                <Link to='cart'>Cart({cartItems.length} items)</Link>
               </li>
             </ul>
           </nav>

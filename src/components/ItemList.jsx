@@ -1,7 +1,14 @@
 import React from "react";
 import { imgURL } from "../utils/Api";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+
 
 const ItemList = ({ items }) => {
+  const dispatch = useDispatch()
+  const handelItem = (item) =>{
+    dispatch(addItem(item))
+  }
   return (
     <div>
       <ul>
@@ -26,7 +33,8 @@ const ItemList = ({ items }) => {
                 alt="logo"
                 className=" h-36 rounded-xl object-cover object-center w-40 overflow-clip "
               />
-              <button className="p-2 bg-gray-300 shadow-lg rounded-lg relative bottom-5 left-14">
+              <button className="p-2 bg-gray-300 shadow-lg rounded-lg relative bottom-5 left-14"
+              onClick={()=>(handelItem(item))}>
                 add+
               </button>
             </div>

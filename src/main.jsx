@@ -7,6 +7,7 @@ import Body from './components/Body.jsx'
 // import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 import Resturantmenu from './components/Resturantmenu.jsx'
+import Cart from './components/Cart.jsx'
 
 const About = lazy(() => import('./components/About.jsx'))
 
@@ -30,6 +31,10 @@ const approuter = createBrowserRouter([
       {
         path: '/resturantmenu/:resid',
         element: <Resturantmenu />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
       }
     ]
   }
