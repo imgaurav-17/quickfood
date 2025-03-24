@@ -18,22 +18,22 @@ const ItemList = ({ items }) => {
             key={item?.card?.info?.id}
           >
             <div className="w-9/12">
-              <li className="font-bold text-gray-700">{item.card.info.name}</li>
+              <li className="font-bold text-gray-700 text-sm sm:text-base">{item.card.info.name}</li>
               <p className="font-semibold">
                 {item.card.info.price / 100 ||
                   item.card.info.defaultPrice / 100}
               </p>
-              <p className="font-normal text-gray-500">
+              <p className="font-normal text-gray-500 text-sm sm:text-base">
                 {item.card.info.description}
               </p>
             </div>
-            <div className="w-3/12">
+            <div className="3/12">
               <img
                 src={imgURL + item?.card?.info?.imageId}
                 alt="logo"
-                className=" h-36 rounded-xl object-cover object-center w-40 overflow-clip "
+                className="sm:h-36 h-20 rounded-xl object-cover object-center sm:w-40 w-24 overflow-clip "
               />
-              <button className="p-2 bg-gray-300 shadow-lg rounded-lg relative bottom-5 left-14"
+              <button className="p-2 bg-gray-300 shadow-lg rounded-lg relative bottom-5 sm:left-14 left-6 text-xs sm:text-base"
               onClick={()=>(handelItem(item))}>
                 add+
               </button>

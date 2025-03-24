@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
+import { VscChevronDown, VscChevronUp } from "react-icons/vsc";
 
 const MenuList = ({ data }) => {
   const [showItems, setShowItems] = useState(false);
@@ -15,15 +16,13 @@ const MenuList = ({ data }) => {
           className="flex justify-between items-center cursor-pointer pb-2"
           onClick={clickHandler}
         >
-          <span className="font-bold text-lg">
+          <span className="font-bold sm:text-lg text-sm">
             {data.title}({data.itemCards.length})
           </span>
-          <span>{showItems ? "⬆️" : "⬇️"}</span>
+          <span>{showItems ? <VscChevronUp /> : <VscChevronDown />}</span>
         </div>
 
-        <div>
-        {showItems && < ItemList items={data.itemCards} />}
-        </div>
+        <div>{showItems && <ItemList items={data.itemCards} />}</div>
       </div>
     </div>
   );

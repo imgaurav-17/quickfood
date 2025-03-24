@@ -19,9 +19,9 @@ export default function About() {
         <p className="text-gray-500 font-semibold">My introduction</p>
       </span>
       {/* main content */}
-      <div className="flex items-center sm:justify-between justify-center gap-16 sm:pt-12 pt-12 sm:flex-nowrap flex-wrap mb-24">
+      <div className="flex items-center sm:justify-between justify-center gap-6 sm:pt-12 pt-12 sm:flex-nowrap flex-wrap mb-24">
         {/* about image */}
-        <div>
+        <div className="w-6/12">
           <img
             src={aboutImage}
             alt="profile"

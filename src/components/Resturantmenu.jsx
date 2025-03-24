@@ -26,7 +26,7 @@ const Resturantmenu = () => {
 
   return (
     <div>
-      <div className="flex flex-col gap-4 px-60 pt-10">
+      <div className="flex flex-col gap-4 sm:px-60 px-10 pt-10">
         <p className="font-bold text-xl">{name}</p>
         <div className=" px-2 py-3 border-2 border-gray-200 rounded-lg ">
           <p className="font-bold text-sm">
@@ -35,7 +35,7 @@ const Resturantmenu = () => {
           <p>{cuisines.join(", ")}</p>
         </div>
       </div>
-      <div className="px-60 py-10">
+      <div className="sm:px-60 px-10 py-10">
         {categories.map((category) => <MenuList data={category.card.card} key={category.card.card.id}/>)}
       </div>
     </div>
